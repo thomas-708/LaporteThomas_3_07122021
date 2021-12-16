@@ -1,5 +1,161 @@
-header{
 
-    background-color: chocolate;
+$primary: #9356DC;
+$secondary: #FF79DA;
+$tertiary: #99E2D0;
+$success: #008766;
+$greydark: #353535;
+$police : #FFFFFF;
+
+$background: #ffffff;
+$background-grey: #eaeaea;
+$background-greylight: #f6f6f6;
+$background-greydark: #353535;
+$background-success: #99e2d0;
+
+
+$shadow-color : #c5c5c5;
+$breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 767px,
+        lg: 992px,
+        xl: 1024px
+);
+
+$Font-logo : 'Shrikhand', sans-serif;
+$Font-text : 'Roboto', sans-serif;
+@mixin Cart_functioning($color) {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: 30px;
+    background-color: $background-greylight;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 5px 10px 15px #999;
+    margin-bottom: 20px;
+    width: 85%;
+}
+
+// media mobile
+a {
+    text-decoration: none;
+
+}
+Body {
+
+    font-family: $Font-text;
+    font-size: 20px;
+    min-width: 350px;
+
+}
+
+
+
+@media screen and (max-width: 552px) {
+    header {
+        font-family: $Font-logo;
+        font-size: 40px;
+        margin: 20px;
+        text-align: center;
+        width: 90%;
+    }
+    
+   .Location {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        opacity: .7;
+        border: {
+            top: 3px solid ;
+            color: #e1e1e1;
+        }
+        
+        background-color: $background-grey;
+        height: 55px;
+        width: 100%;
+        .fa-map-marker-alt{
+            margin-right: 20px;
+
+        }
+   }
+
+
+   .Reserve{
+        display: flex;
+        flex-flow: column nowrap;
+        padding-top: 40px;
+        align-items: center;
+        height: 350px;
+        background-color: $background-greylight;
+
+        .title-Reserve{
+
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .text-reserve{
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .button-Reserve{
+            text-align: center;
+            margin-top: 30px;
+            border-radius: 40px;
+            padding: 20px;
+            font-size: 20px;
+            background: linear-gradient( to bottom , $secondary, $primary);
+            font-weight: 400;
+            color: $police;
+            border: none;
+            box-shadow: 4px 3px 5px $shadow-color;
+        }
+   }
+
+   .functioning{
+        .title-functioning{
+            padding: 30px;
+            font-size: 25px;
+            font-weight: bold;
+            
+        }
+
+        .module-functioning{
+            display: flex;
+            flex-flow: column nowrap;
+            text-align: center;
+            width: 100%;
+        }
+
+        .Cart-functioning,.Cart1-functioning,.Cart2-functioning {
+            @include Cart_functioning(#{$background-greylight});
+        }
+
+        .cart-number{
+            position: relative;
+            color: $police;
+            background-color: $primary;
+            border-radius: 40px 40px;
+            width: 28px;
+            padding: 3px;
+            right: 40px;
+           
+        }
+        .cart-icon {
+            position: relative;
+            right: 20px;
+            color: black;
+            opacity: .5;
+        } 
+        .cart-text {
+
+            color: black;
+        }
+
+
+   }
 
 }

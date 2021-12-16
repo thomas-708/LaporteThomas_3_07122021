@@ -1,5 +1,109 @@
-header {
-  background-color: chocolate;
+a {
+  text-decoration: none;
+}
+
+Body {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  min-width: 350px;
+}
+
+@media screen and (max-width: 552px) {
+  header {
+    font-family: "Shrikhand", sans-serif;
+    font-size: 40px;
+    margin: 20px;
+    text-align: center;
+    width: 90%;
+  }
+
+  .Location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.7;
+    border-top: 3px solid;
+    border-color: #e1e1e1;
+    background-color: #eaeaea;
+    height: 55px;
+    width: 100%;
+  }
+  .Location .fa-map-marker-alt {
+    margin-right: 20px;
+  }
+
+  .Reserve {
+    display: flex;
+    flex-flow: column nowrap;
+    padding-top: 40px;
+    align-items: center;
+    height: 350px;
+    background-color: #f6f6f6;
+  }
+  .Reserve .title-Reserve {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .Reserve .text-reserve {
+    padding-top: 20px;
+    text-align: center;
+  }
+  .Reserve .button-Reserve {
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 40px;
+    padding: 20px;
+    font-size: 20px;
+    background: linear-gradient(to bottom, #FF79DA, #9356DC);
+    font-weight: 400;
+    color: #FFFFFF;
+    border: none;
+    box-shadow: 4px 3px 5px #c5c5c5;
+  }
+
+  .functioning .title-functioning {
+    padding: 30px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .functioning .module-functioning {
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    width: 100%;
+  }
+  .functioning .Cart-functioning, .functioning .Cart1-functioning, .functioning .Cart2-functioning {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: 30px;
+    background-color: #f6f6f6;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 5px 10px 15px #999;
+    margin-bottom: 20px;
+    width: 85%;
+  }
+  .functioning .cart-number {
+    position: relative;
+    color: #FFFFFF;
+    background-color: #9356DC;
+    border-radius: 40px 40px;
+    width: 28px;
+    padding: 3px;
+    right: 40px;
+  }
+  .functioning .cart-icon {
+    position: relative;
+    right: 20px;
+    color: black;
+    opacity: 0.5;
+  }
+  .functioning .cart-text {
+    color: black;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
