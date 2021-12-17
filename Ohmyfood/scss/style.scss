@@ -24,17 +24,21 @@ $breakpoints: (
 
 $Font-logo : 'Shrikhand', sans-serif;
 $Font-text : 'Roboto', sans-serif;
-@mixin Cart_functioning($color) {
+@mixin Cart_Base($color,$direction,$wrap,$padding,$width) {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: $direction $wrap;
+    justify-content: center;
+    align-items: center;
     margin-left: 30px;
     background-color: $background-greylight;
-    padding: 30px;
+    padding: $padding;
     border-radius: 25px;
-    box-shadow: 5px 10px 15px #999;
+    box-shadow: 5px 10px 15px $shadow-color;
     margin-bottom: 20px;
-    width: 85%;
+    width: $width;
 }
+
+
 
 // media mobile
 a {
@@ -99,6 +103,7 @@ Body {
         .text-reserve{
             padding-top: 20px;
             text-align: center;
+            opacity: .6;
         }
 
         .button-Reserve{
@@ -120,7 +125,6 @@ Body {
             padding: 30px;
             font-size: 25px;
             font-weight: bold;
-            
         }
 
         .module-functioning{
@@ -131,7 +135,8 @@ Body {
         }
 
         .Cart-functioning,.Cart1-functioning,.Cart2-functioning {
-            @include Cart_functioning(#{$background-greylight});
+            // color flexdir flow padding whidth
+            @include Cart_Base(#{$background-greylight},row ,nowrap, 30px, 85%);
         }
 
         .cart-number{
@@ -139,23 +144,133 @@ Body {
             color: $police;
             background-color: $primary;
             border-radius: 40px 40px;
-            width: 28px;
+            width: 32px;
             padding: 3px;
-            right: 40px;
-           
+            right: 35px;
         }
         .cart-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
-            right: 20px;
+            right: 0px;
             color: black;
             opacity: .5;
         } 
         .cart-text {
-
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: black;
+            width: 100%;
+        }
+   }
+
+   .select {
+    margin-top: 40px;
+
+        .title-select{
+            padding: 30px;
+            font-size: 25px;
+            font-weight: bold;
         }
 
+        .module-select{
+            display: flex;
+            flex-flow: column nowrap;
+            text-align: center;
+            width: 100%;
 
-   }
+        }
+        .Cart1-select,.Cart2-select,.Cart3-select,.Cart4-select{
+            @include Cart_Base(#{$background-greylight},column ,nowrap, 0, 85%);
+        }
+
+        .Cart1-img,.Cart2-img,.Cart3-img,.Cart4-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            overflow: hidden;
+            border-radius: 25px 25px 0 0;
+        }
+
+        .news-select{
+                position: relative;
+                bottom: 165px;
+                left: 130px;
+                background-color: $tertiary;
+                padding: 7px 17px;
+                border-radius: 3px;
+                color: $success;
+                font-size: 12px;
+                font-weight: bold;
+        }
+        .Cart-text-module {
+                display: flex;
+                flex-flow: column wrap;
+                align-items: flex-start;
+                justify-content: flex-start;
+                width: 100%;
+                height: auto;
+                padding-left: 20px;
+                color: black;
+        }
+        .name-select {
+                margin-top: -10px;
+                width: 100%;
+                font-weight: bold;
+        }
+
+        .desc-selct{
+            opacity: 0.7;
+            padding-top: 10px;
+            font-size: 20px;
+        }
+
+        .select-icon{
+            position: relative;
+            color: black;
+            opacity: .7;
+            bottom: 50px;
+            left: 150px;
+            font-size: 30px;
+        }
+    }
+
+
+    .foot{
+        background-color: $background-greydark;
+        color: $police;
+        padding: 20px ;
+
+        .title-foot{
+            font-family: $Font-logo;
+            font-size: 20px;
+            padding-bottom: 15px;
+        }
+
+        .text-foot{
+            display: flex;
+            flex-flow: column wrap;
+            font-size: 15px;
+            line-height: 25px;
+        }
+        .suggest ,.Partner{
+            display: flex;
+            flex-flow: row nowrap;
+            
+        }
+        .icon-foot{
+            padding-right: 13px;
+        }
+
+        .icon-foot-Partner{
+
+            padding-right: 5px;
+        }
+    
+    }
+
+
 
 }
