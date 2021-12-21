@@ -119,6 +119,7 @@ header {
 }
 .functioning .cart-text {
   display: flex;
+  flex-flow: none none;
   align-items: center;
   justify-content: center;
   color: black;
@@ -233,6 +234,51 @@ header {
 @media all and (min-width: 576px) {
   .Location {
     background-color: #353535;
+  }
+
+  .functioning .module-functioning {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .functioning .Cart-functioning, .functioning .Cart1-functioning, .functioning .Cart2-functioning {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    background-color: #f6f6f6;
+    padding: 0px;
+    border-radius: 25px;
+    box-shadow: 5px 10px 15px #c5c5c5;
+    margin-bottom: 20px;
+    width: 30%;
+  }
+  .functioning .cart-number {
+    width: 30px;
+    padding: 3px;
+    bottom: 10px;
+    right: 0px;
+  }
+  .functioning .cart-icon {
+    display: flex;
+    flex-flow: none none;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: 0px;
+    color: black;
+    opacity: 0.5;
+    size: 20px;
+  }
+  .functioning .cart-text {
+    display: flex;
+    flex-flow: none none;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    width: 50%;
   }
 }
 @media all and (min-width: 992px) {

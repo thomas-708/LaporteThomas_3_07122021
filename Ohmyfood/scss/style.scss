@@ -118,9 +118,7 @@ header {
         opacity: .5;
     } 
     .cart-text {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex (none,none,center,center);
         color: black;
         width: 100%;
     }
@@ -227,6 +225,36 @@ header {
     .Location{
         background-color: $background-greydark;
     }
+    .functioning{
+        .module-functioning{
+            @include flex (row,wrap,center,center);
+            
+        }
+        .Cart-functioning,.Cart1-functioning,.Cart2-functioning {
+          
+            @include Cart_Base(#{$background-greylight},column ,wrap, 0px, 30%);
+
+         }
+         .cart-number{
+            width: 30px;
+            padding: 3px;
+            bottom: 10px;
+            right: 0px;
+        }
+        .cart-icon {
+            @include flex (none,none,center,center);
+            position: relative;
+            right: 0px;
+            color: black;
+            opacity: .5;
+            size: 20px
+        } 
+        .cart-text {
+            @include flex (none,none,center,center);
+            color: black;
+            width: 50%;
+        }
+    }
  
 }
 
@@ -235,9 +263,9 @@ header {
 @media all and (min-width: map-get($breakpoints, desktop)) {
     .Location{
         background-color: red;
-
-
     }
+
+
  
 }
 
