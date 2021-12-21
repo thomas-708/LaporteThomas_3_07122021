@@ -1,276 +1,246 @@
 
-$primary: #9356DC;
-$secondary: #FF79DA;
-$tertiary: #99E2D0;
-$success: #008766;
-$greydark: #353535;
-$police : #FFFFFF;
+@import '../Utils/_Utils.scss';
 
-$background: #ffffff;
-$background-grey: #eaeaea;
-$background-greylight: #f6f6f6;
-$background-greydark: #353535;
-$background-success: #99e2d0;
-
-
-$shadow-color : #c5c5c5;
-$breakpoints: (
-        xs: 0,
-        sm: 576px,
-        md: 767px,
-        lg: 992px,
-        xl: 1024px
-);
-
-$Font-logo : 'Shrikhand', sans-serif;
-$Font-text : 'Roboto', sans-serif;
-@mixin Cart_Base($color,$direction,$wrap,$padding,$width) {
-    display: flex;
-    flex-flow: $direction $wrap;
-    justify-content: center;
-    align-items: center;
-    margin-left: 30px;
-    background-color: $background-greylight;
-    padding: $padding;
-    border-radius: 25px;
-    box-shadow: 5px 10px 15px $shadow-color;
-    margin-bottom: 20px;
-    width: $width;
-}
-
-
-
+@import '../Utils/_Mixins';
 // media mobile
+
+
+
 a {
     text-decoration: none;
-
+    color: $police;
 }
-Body {
 
+Body {
     font-family: $Font-text;
     font-size: 20px;
-    min-width: 350px;
 
+    background-color: $background
 }
 
 
 
-@media screen and (max-width: 552px) {
-    header {
-        font-family: $Font-logo;
-        font-size: 40px;
-        margin: 20px;
+header {
+    font-family: $Font-logo;
+    font-size: 40px;
+    padding-left: 10%;
+    text-align: center;    
+    width: 90%;
+    height: auto;
+    background-color: $background
+}
+    
+.Location {
+    @include flex (row,nowrap,center,center);
+    font-size: 20px;
+    font-weight: bold;
+    opacity: .7;
+    border: {
+        top: 3px solid ;
+        color: #e1e1e1;
+    }
+    
+    background-color: $background-grey;
+    height: 55px;
+    width: 100%;
+
+    .fa-map-marker-alt{
+        margin-right: 20px;
+
+    }
+}
+
+
+.Reserve{
+    @include flex (column,nowrap,center,none);
+    padding-top: 40px;
+    height: 350px;
+    background-color: $background-greylight;
+
+    .title-Reserve{
         text-align: center;
-        width: 90%;
-    }
-    
-   .Location {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 20px;
+        font-size: 25px;
         font-weight: bold;
-        opacity: .7;
-        border: {
-            top: 3px solid ;
-            color: #e1e1e1;
-        }
-        
-        background-color: $background-grey;
-        height: 55px;
-        width: 100%;
-        .fa-map-marker-alt{
-            margin-right: 20px;
-
-        }
-   }
-
-
-   .Reserve{
-        display: flex;
-        flex-flow: column nowrap;
-        padding-top: 40px;
-        align-items: center;
-        height: 350px;
-        background-color: $background-greylight;
-
-        .title-Reserve{
-
-            text-align: center;
-            font-size: 25px;
-            font-weight: bold;
-        }
-        .text-reserve{
-            padding-top: 20px;
-            text-align: center;
-            opacity: .6;
-        }
-
-        .button-Reserve{
-            text-align: center;
-            margin-top: 30px;
-            border-radius: 40px;
-            padding: 20px;
-            font-size: 20px;
-            background: linear-gradient( to bottom , $secondary, $primary);
-            font-weight: 400;
-            color: $police;
-            border: none;
-            box-shadow: 4px 3px 5px $shadow-color;
-        }
-   }
-
-   .functioning{
-        .title-functioning{
-            padding: 30px;
-            font-size: 25px;
-            font-weight: bold;
-        }
-
-        .module-functioning{
-            display: flex;
-            flex-flow: column nowrap;
-            text-align: center;
-            width: 100%;
-        }
-
-        .Cart-functioning,.Cart1-functioning,.Cart2-functioning {
-            // color flexdir flow padding whidth
-            @include Cart_Base(#{$background-greylight},row ,nowrap, 30px, 85%);
-        }
-
-        .cart-number{
-            position: relative;
-            color: $police;
-            background-color: $primary;
-            border-radius: 40px 40px;
-            width: 32px;
-            padding: 3px;
-            right: 35px;
-        }
-        .cart-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            right: 0px;
-            color: black;
-            opacity: .5;
-        } 
-        .cart-text {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: black;
-            width: 100%;
-        }
-   }
-
-   .select {
-    margin-top: 40px;
-
-        .title-select{
-            padding: 30px;
-            font-size: 25px;
-            font-weight: bold;
-        }
-
-        .module-select{
-            display: flex;
-            flex-flow: column nowrap;
-            text-align: center;
-            width: 100%;
-
-        }
-        .Cart1-select,.Cart2-select,.Cart3-select,.Cart4-select{
-            @include Cart_Base(#{$background-greylight},column ,nowrap, 0, 85%);
-        }
-
-        .Cart1-img,.Cart2-img,.Cart3-img,.Cart4-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            overflow: hidden;
-            border-radius: 25px 25px 0 0;
-        }
-
-        .news-select{
-                position: relative;
-                bottom: 165px;
-                left: 130px;
-                background-color: $tertiary;
-                padding: 7px 17px;
-                border-radius: 3px;
-                color: $success;
-                font-size: 12px;
-                font-weight: bold;
-        }
-        .Cart-text-module {
-                display: flex;
-                flex-flow: column wrap;
-                align-items: flex-start;
-                justify-content: flex-start;
-                width: 100%;
-                height: auto;
-                padding-left: 20px;
-                color: black;
-        }
-        .name-select {
-                margin-top: -10px;
-                width: 100%;
-                font-weight: bold;
-        }
-
-        .desc-selct{
-            opacity: 0.7;
-            padding-top: 10px;
-            font-size: 20px;
-        }
-
-        .select-icon{
-            position: relative;
-            color: black;
-            opacity: .7;
-            bottom: 50px;
-            left: 150px;
-            font-size: 30px;
-        }
+    }
+    .text-reserve{
+        padding-top: 20px;
+        text-align: center;
+        opacity: .6;
     }
 
-
-    .foot{
-        background-color: $background-greydark;
+    .button-Reserve{
+        text-align: center;
+        margin-top: 30px;
+        border-radius: 40px;
+        padding: 20px;
+        font-size: 20px;
+        background: linear-gradient( to bottom , $secondary, $primary);
+        font-weight: 400;
         color: $police;
-        padding: 20px ;
+        border: none;
+        box-shadow: 4px 3px 5px $shadow-color;
+    }
+}
 
-        .title-foot{
-            font-family: $Font-logo;
-            font-size: 20px;
-            padding-bottom: 15px;
-        }
-
-        .text-foot{
-            display: flex;
-            flex-flow: column wrap;
-            font-size: 15px;
-            line-height: 25px;
-        }
-        .suggest ,.Partner{
-            display: flex;
-            flex-flow: row nowrap;
-            
-        }
-        .icon-foot{
-            padding-right: 13px;
-        }
-
-        .icon-foot-Partner{
-
-            padding-right: 5px;
-        }
-    
+.functioning{
+    width: 100%;
+    .title-functioning{
+        padding: 30px;
+        font-size: 25px;
+        font-weight: bold;
     }
 
+    .module-functioning{
+        @include flex (column,nowrap,none,none);
+        text-align: center;
+        width: 100%;
+    }
 
+    .Cart-functioning,.Cart1-functioning,.Cart2-functioning {
+            // color flexdir flow padding whidth
+        @include Cart_Base(#{$background-greylight},row ,nowrap, 30px, 90%);
+    }
 
+    .cart-number{
+        position: relative;
+        color: $police;
+        background-color: $primary;
+        border-radius: 40px 40px;
+        width: 32px;
+        padding: 3px;
+        right: 35px;
+    }
+    .cart-icon {
+        @include flex (none,none,center,center);
+        position: relative;
+        right: 0px;
+        color: black;
+        opacity: .5;
+    } 
+    .cart-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        width: 100%;
+    }
 }
+
+.select {
+ margin-top: 40px;
+
+    .title-select{
+        padding: 30px;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .module-select{
+        @include flex (column,nowrap,none,none);
+        width: 100%;
+    }
+    .Cart1-select,.Cart2-select,.Cart3-select,.Cart4-select{
+        @include Cart_Base(#{$background-greylight},column ,nowrap, 0, 90%);
+    }
+
+    .Cart1-img,.Cart2-img,.Cart3-img,.Cart4-img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 25px 25px 0 0;
+    }
+
+    .news-select{
+        position: relative;
+        bottom: 130px;
+        left: 70%;
+        background-color: $tertiary;
+        padding: 7px 17px;
+        border-radius: 3px;
+        color: $success;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .Cart-text-module {
+        @include flex (column,wrap,flex-start,flex-start);
+        width: 100%;
+        height: auto;
+        padding: 1px 20px;
+        color: black;
+    }
+    .name-select {
+        margin-top: 5px;
+        width: 100%;
+        font-weight: bold;
+    }
+
+    .desc-selct{
+        opacity: 0.7;
+        padding-top: 10px;
+        font-size: 20px;
+    }
+
+    .select-icon{
+         position: relative;
+         color: black;
+         opacity: .7;
+         bottom: 50px;
+         left: 40%;
+         font-size: 30px;
+     }
+}
+
+
+.foot{
+     background-color: $background-greydark;
+     color: $police;
+     padding: 20px ;
+
+     .title-foot{
+        font-family: $Font-logo;
+        font-size: 20px;
+        padding-bottom: 15px;
+     }
+
+     .text-foot{
+        @include flex (column,wrap,none,none);
+        font-size: 15px;
+        line-height: 25px;
+        
+     }
+     .suggest ,.Partner{
+          @include flex (row,nowrap,none,none);
+            
+    }
+    .icon-foot{
+            padding-right: 12px;
+    }
+
+    .icon-foot-Partner{
+
+        padding-right: 10px;
+    }
+    
+}
+
+@media all and (min-width: map-get($breakpoints, mobile)) {
+    .Location{
+        background-color: $background-greydark;
+    }
+ 
+}
+
+
+
+@media all and (min-width: map-get($breakpoints, desktop)) {
+    .Location{
+        background-color: red;
+
+
+    }
+ 
+}
+
+
+
+

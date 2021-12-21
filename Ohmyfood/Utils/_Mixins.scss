@@ -1,0 +1,20 @@
+@mixin Cart_Base($color,$direction,$wrap,$padding,$width) {
+    display: flex;
+    flex-flow: $direction $wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    background-color: $background-greylight;
+    padding: $padding;
+    border-radius: 25px;
+    box-shadow: 5px 10px 15px $shadow-color;
+    margin-bottom: 20px;
+    width: $width;
+}
+
+@mixin flex($direction,$wrap,$alignI,$justifyC)  {
+    display: flex;
+    flex-flow: $direction $wrap;
+    align-items: $alignI;
+    justify-content: $justifyC;
+}

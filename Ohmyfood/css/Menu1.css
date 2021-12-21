@@ -1,0 +1,24 @@
+a {
+  text-decoration: none;
+}
+
+Body {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  min-width: 350px;
+}
+
+@media screen and (max-width: 556px) {
+  .top {
+    position: sticky;
+    font-family: "Shrikhand", sans-serif;
+    font-size: 40px;
+    margin: 20px;
+    text-align: center;
+    width: 90%;
+    height: auto;
+    background-color: #9356DC;
+  }
+}
+
+/*# sourceMappingURL=Menu1.css.map */
