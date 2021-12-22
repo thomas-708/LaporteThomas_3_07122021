@@ -1,24 +1,140 @@
 a {
   text-decoration: none;
+  color: #FFFFFF;
 }
 
 Body {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
-  min-width: 350px;
+  min-width: 300px;
+  background-color: #ffffff;
 }
 
-@media screen and (max-width: 556px) {
-  .top {
-    position: sticky;
-    font-family: "Shrikhand", sans-serif;
-    font-size: 40px;
-    margin: 20px;
-    text-align: center;
-    width: 90%;
-    height: auto;
-    background-color: #9356DC;
-  }
+main {
+  background-color: #eaeaea;
+}
+
+.top {
+  position: relative;
+  font-family: "Shrikhand", sans-serif;
+  font-size: 40px;
+  padding-left: 10%;
+  text-align: center;
+  width: 90%;
+  height: 46px;
+  background-color: #ffffff;
+  padding-top: 0px;
+  bottom: 45px;
+  margin: 10px 0;
+}
+.top .fa-arrow-left {
+  position: relative;
+  font-size: 18px;
+  color: black;
+  opacity: 0.6;
+  font-weight: bold;
+  right: 190px;
+  top: 40px;
+}
+
+.menu {
+  position: relative;
+  bottom: 65px;
+  border-radius: 40px 40px 0 0;
+  background-color: #eaeaea;
+  padding-left: 1px;
+  height: auto;
+}
+.menu .title-menu {
+  padding: 30px 25px;
+  font-family: "Shrikhand", sans-serif;
+  font-size: 30px;
+}
+.menu .title-menu .fa-heart {
+  padding-left: 35%;
+}
+.menu .title-menu- {
+  width: 10%;
+  text-transform: uppercase;
+  opacity: 0.7;
+  font-size: 20px;
+  padding-bottom: 5px;
+  padding-top: 20px;
+  border-bottom: 3px solid;
+  border-color: #99E2D0;
+  margin-left: 25px;
+}
+.menu .module-cart-menu {
+  padding: 10px 0px;
+}
+.menu .cart-menu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+  background-color: #f6f6f6;
+  padding: 1px;
+  border-radius: 25px;
+  box-shadow: 5px 10px 15px #c5c5c5;
+  margin-bottom: 20px;
+  width: 93%;
+  height: 90px;
+  color: black;
+}
+.menu .cart-menu .alignText-cart-menu {
+  width: 85%;
+}
+.menu .cart-menu .cart-title-menu {
+  font-weight: bold;
+  line-height: 35px;
+}
+.menu .Command {
+  text-align: center;
+  margin-top: 40px;
+}
+.menu .Command .button-Command {
+  text-align: center;
+  margin-top: 30px;
+  border-radius: 40px;
+  padding: 20px 70px;
+  font-size: 20px;
+  background: linear-gradient(to bottom, #FF79DA, #9356DC);
+  font-weight: 400;
+  color: #FFFFFF;
+  border: none;
+  box-shadow: 4px 3px 5px #c5c5c5;
+}
+
+.foot {
+  background-color: #353535;
+  color: #FFFFFF;
+  padding: 20px;
+}
+.foot .title-foot {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 20px;
+  padding-bottom: 15px;
+}
+.foot .text-foot {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: none;
+  justify-content: none;
+  font-size: 15px;
+  line-height: 25px;
+}
+.foot .suggest, .foot .Partner {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: none;
+  justify-content: none;
+}
+.foot .icon-foot {
+  padding-right: 12px;
+}
+.foot .icon-foot-Partner {
+  padding-right: 10px;
 }
 
 /*# sourceMappingURL=Menu1.css.map */

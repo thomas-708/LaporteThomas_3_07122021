@@ -1,0 +1,142 @@
+
+@import '../Utils/_Utils.scss';
+
+@import '../Utils/_Mixins';
+a {
+    text-decoration: none;
+    color: $police;
+}
+
+Body {
+    font-family: $Font-text;
+    font-size: 20px;
+    min-width: 300px;
+    background-color: $background;
+}
+main {
+
+    background-color: $background-grey;
+}
+
+
+.top {
+    position: relative;
+    font-family: $Font-logo;
+    font-size: 40px;
+    padding-left: 10%;
+    text-align: center;    
+    width: 90%;
+    height: 46px;
+    background-color: $background;
+    padding-top: 0px;
+    bottom: 45px;
+    margin: 10px 0;
+    .fa-arrow-left{
+        position: relative;
+        font-size: 18px;
+        color: black;
+        opacity: .6;
+        font-weight: bold;
+        right: 190px;
+        top: 40px;
+    }
+}
+
+.menu{
+    position: relative;
+    bottom: 65px;
+    border-radius: 40px 40px 0 0 ;
+    background-color: $background-grey;
+    padding-left: 1px;
+    height: auto;
+    .title-menu{
+        padding:30px 25px;
+        font-family: $Font-logo;
+        font-size: 30px;
+        .fa-heart{
+            padding-left: 35%;
+
+        }
+    }
+    .title-menu-{
+        width: 10%;
+        text-transform: uppercase;
+        opacity: .7;
+        font-size: 20px;
+        padding-bottom: 5px;
+        padding-top: 20px;
+        
+        border: {
+            bottom: 3px solid;
+            color: $tertiary;
+        }
+        margin-left:  25px;
+    }
+    .module-cart-menu {
+       padding: 10px 0px;
+    }
+    .cart-menu {
+        @include Cart_Base(#{$background-greylight},row ,nowrap, 1px, 93%);
+        height: 90px;
+        color:  black;
+        .alignText-cart-menu{
+            width: 85%;
+        }
+        .cart-title-menu{
+            font-weight: bold;
+            line-height: 35px;
+        }
+    }
+    .Command{
+        text-align: center;
+        margin-top: 40px;
+        
+        .button-Command{
+            text-align: center;
+            margin-top: 30px;
+            border-radius: 40px;
+            padding: 20px 70px;
+            font-size: 20px;
+            background: linear-gradient( to bottom , $secondary, $primary);
+            font-weight: 400;
+            color: $police;
+            border: none;
+            box-shadow: 4px 3px 5px $shadow-color;
+          
+        }
+    }
+
+
+}
+
+.foot{
+    background-color: $background-greydark;
+    color: $police;
+    padding: 20px ;
+
+    .title-foot{
+       font-family: $Font-logo;
+       font-size: 20px;
+       padding-bottom: 15px;
+    }
+
+    .text-foot{
+       @include flex (column,wrap,none,none);
+       font-size: 15px;
+       line-height: 25px;
+       
+    }
+    .suggest ,.Partner{
+         @include flex (row,nowrap,none,none);
+           
+   }
+   .icon-foot{
+           padding-right: 12px;
+   }
+
+   .icon-foot-Partner{
+
+       padding-right: 10px;
+   }
+   
+}

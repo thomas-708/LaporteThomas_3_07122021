@@ -6,6 +6,7 @@ a {
 Body {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
+  min-width: 300px;
   background-color: #ffffff;
 }
 
@@ -96,7 +97,8 @@ header {
   border-radius: 25px;
   box-shadow: 5px 10px 15px #c5c5c5;
   margin-bottom: 20px;
-  width: 90%;
+  width: 95%;
+  margin-left: 10px;
 }
 .functioning .cart-number {
   position: relative;
@@ -152,7 +154,8 @@ header {
   border-radius: 25px;
   box-shadow: 5px 10px 15px #c5c5c5;
   margin-bottom: 20px;
-  width: 90%;
+  width: 95%;
+  margin-left: 10px;
 }
 .select .Cart1-img, .select .Cart2-img, .select .Cart3-img, .select .Cart4-img {
   width: 100%;
@@ -162,14 +165,15 @@ header {
 }
 .select .news-select {
   position: relative;
-  bottom: 130px;
-  left: 70%;
+  bottom: 250px;
+  left: 75%;
   background-color: #99E2D0;
   padding: 7px 17px;
   border-radius: 3px;
   color: #008766;
   font-size: 12px;
   font-weight: bold;
+  width: 80px;
 }
 .select .Cart-text-module {
   display: flex;
@@ -232,15 +236,15 @@ header {
 }
 
 @media all and (min-width: 576px) {
-  .Location {
-    background-color: #353535;
+  .functioning .title-functioning {
+    text-align: center;
   }
-
   .functioning .module-functioning {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
+    width: 100%;
   }
   .functioning .Cart-functioning, .functioning .Cart1-functioning, .functioning .Cart2-functioning {
     display: flex;
@@ -253,7 +257,12 @@ header {
     border-radius: 25px;
     box-shadow: 5px 10px 15px #c5c5c5;
     margin-bottom: 20px;
-    width: 30%;
+    width: 40%;
+    border-radius: 100%;
+    width: 190px;
+    height: 190px;
+    padding: 30px;
+    margin: 0 50px;
   }
   .functioning .cart-number {
     width: 30px;
@@ -261,29 +270,38 @@ header {
     bottom: 10px;
     right: 0px;
   }
-  .functioning .cart-icon {
-    display: flex;
-    flex-flow: none none;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    right: 0px;
-    color: black;
-    opacity: 0.5;
-    size: 20px;
+
+  .select {
+    margin: 10px;
   }
-  .functioning .cart-text {
-    display: flex;
-    flex-flow: none none;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    width: 50%;
+  .select .news-select {
+    left: 80%;
   }
 }
 @media all and (min-width: 992px) {
-  .Location {
-    background-color: red;
+  .select {
+    width: 95%;
+    height: auto;
+    margin: 30px;
+  }
+  .select .module-select {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: none;
+    justify-content: none;
+    width: 100%;
+  }
+  .select .news-select {
+    display: none;
+  }
+  .select .Cart-text-module {
+    max-height: 58px;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  .select .desc-selct {
+    font-size: 15px;
   }
 }
 

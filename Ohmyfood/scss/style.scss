@@ -14,7 +14,7 @@ a {
 Body {
     font-family: $Font-text;
     font-size: 20px;
-
+    min-width: 300px;
     background-color: $background
 }
 
@@ -98,7 +98,8 @@ header {
 
     .Cart-functioning,.Cart1-functioning,.Cart2-functioning {
             // color flexdir flow padding whidth
-        @include Cart_Base(#{$background-greylight},row ,nowrap, 30px, 90%);
+        @include Cart_Base(#{$background-greylight},row ,nowrap, 30px, 95%);
+        margin-left: 10px;
     }
 
     .cart-number{
@@ -138,7 +139,8 @@ header {
         width: 100%;
     }
     .Cart1-select,.Cart2-select,.Cart3-select,.Cart4-select{
-        @include Cart_Base(#{$background-greylight},column ,nowrap, 0, 90%);
+        @include Cart_Base(#{$background-greylight},column ,nowrap, 0, 95%);
+        margin-left: 10px;
     }
 
     .Cart1-img,.Cart2-img,.Cart3-img,.Cart4-img {
@@ -150,14 +152,15 @@ header {
 
     .news-select{
         position: relative;
-        bottom: 130px;
-        left: 70%;
+        bottom: 250px;
+        left: 75%;
         background-color: $tertiary;
         padding: 7px 17px;
         border-radius: 3px;
         color: $success;
         font-size: 12px;
         font-weight: bold;
+        width: 80px
     }
     .Cart-text-module {
         @include flex (column,wrap,flex-start,flex-start);
@@ -222,18 +225,25 @@ header {
 }
 
 @media all and (min-width: map-get($breakpoints, mobile)) {
-    .Location{
-        background-color: $background-greydark;
-    }
+    // .Location{
+    //     background-color: $background-greydark;
+    // }
     .functioning{
+        .title-functioning{
+            text-align: center;
+
+        }
         .module-functioning{
             @include flex (row,wrap,center,center);
-            
+            width: 100%
         }
         .Cart-functioning,.Cart1-functioning,.Cart2-functioning {
-          
-            @include Cart_Base(#{$background-greylight},column ,wrap, 0px, 30%);
-
+            @include Cart_Base(#{$background-greylight},column ,wrap, 0px, 40%);
+            border-radius: 100%;
+            width: 190px;
+            height: 190px;
+            padding: 30px;
+            margin: 0 50px;
          }
          .cart-number{
             width: 30px;
@@ -241,32 +251,50 @@ header {
             bottom: 10px;
             right: 0px;
         }
-        .cart-icon {
-            @include flex (none,none,center,center);
-            position: relative;
-            right: 0px;
-            color: black;
-            opacity: .5;
-            size: 20px
-        } 
-        .cart-text {
-            @include flex (none,none,center,center);
-            color: black;
-            width: 50%;
-        }
     }
- 
+    .select {
+
+      
+        margin: 10px;
+        .news-select{
+            left: 80%;
+        }
+    }    
 }
 
 
 
 @media all and (min-width: map-get($breakpoints, desktop)) {
-    .Location{
-        background-color: red;
+    // .Location{
+    //     background-color: red;
+    // }
+    .select {
+        width: 95%;
+        height: auto;
+        margin: 30px;
+        
+        .module-select{
+            @include flex (row,nowrap,none,none);
+            width: 100%;
+        }
+        .news-select{
+            
+            display: none;
+            
+            
+        }
+        .Cart-text-module {
+            max-height: 58px;
+            width: 100%;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .desc-selct{
+            font-size: 15px;
+
+        }
+     
     }
-
-
- 
 }
 
 
