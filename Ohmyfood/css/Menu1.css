@@ -1,3 +1,103 @@
+@keyframes loader-dis {
+  0% {
+    transform: translateZ(0);
+    border-radius: 0 0 0% 0%;
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(-1200px);
+    border-radius: 0 0 100% 100%;
+    opacity: 1;
+  }
+}
+@keyframes cercle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fire {
+  0% {
+    color: #FF79DA;
+    text-shadow: 0 0 7 #FF79DA;
+  }
+  80% {
+    color: #9356DC;
+    text-shadow: none;
+  }
+  100% {
+    color: #FF79DA;
+    text-shadow: 0 0 7 #FF79DA;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes appar {
+  100% {
+    opacity: 1;
+  }
+}
+.loader {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+  inset: 0;
+  opacity: 0.95;
+  z-index: 2;
+  animation: loader-dis 1s 1s forwards;
+  transform-origin: top;
+}
+.loader .fa-stack {
+  display: inline;
+  padding-top: 50%;
+  padding-left: 35%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+.loader .fa-stack .fa-superpowers {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 120px;
+  inset: 0;
+  animation: cercle 1.2s infinite;
+  color: #9356DC;
+}
+.loader .fa-stack .fa-hotjar {
+  animation: fire 2s infinite;
+  animation-delay: 400ms;
+  position: relative;
+  font-size: 50px;
+  right: 80px;
+  top: 12px;
+}
+
+.like::after {
+  content: "\f004";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  color: black;
+  opacity: 0.7;
+}
+
+.like:hover::after {
+  transition: all 1.2s;
+  font-weight: 900;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 a {
   text-decoration: none;
   color: #FFFFFF;
@@ -39,19 +139,19 @@ main {
 
 .menu {
   position: relative;
-  bottom: 65px;
   border-radius: 40px 40px 0 0;
   background-color: #eaeaea;
   padding-left: 1px;
   height: auto;
+  top: -35px;
 }
 .menu .title-menu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
   padding: 30px 25px;
   font-family: "Shrikhand", sans-serif;
   font-size: 30px;
-}
-.menu .title-menu .fa-heart {
-  padding-left: 35%;
 }
 .menu .title-menu- {
   width: 10%;
@@ -67,6 +167,18 @@ main {
 .menu .module-cart-menu {
   padding: 10px 0px;
 }
+.menu .A {
+  opacity: 0;
+  animation: appar 5s 2s forwards;
+}
+.menu .B {
+  opacity: 0;
+  animation: appar 5s 2.5s forwards;
+}
+.menu .C {
+  opacity: 0;
+  animation: appar 5s 3s forwards;
+}
 .menu .cart-menu {
   display: flex;
   flex-flow: row nowrap;
@@ -79,23 +191,66 @@ main {
   box-shadow: 5px 10px 15px #c5c5c5;
   margin-bottom: 20px;
   width: 93%;
+  justify-content: space-between;
   height: 90px;
   color: black;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .menu .cart-menu .alignText-cart-menu {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-left: 20px;
   width: 85%;
 }
 .menu .cart-menu .cart-title-menu {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-weight: bold;
   line-height: 35px;
 }
+.menu .cart-menu .text-cart-menu {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu .cart-menu .price-cart-menu {
+  padding-right: 15px;
+  padding-top: 30px;
+}
+.menu .cart-menu .check-menu {
+  box-sizing: border-box;
+  background-color: #99E2D0;
+  height: 102%;
+  margin-right: -6.5rem;
+  width: 6rem;
+  transition: margin-right 0.5s;
+}
+.menu .cart-menu .check-menu .fa-check-circle {
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: inherit;
+  height: inherit;
+  color: white;
+}
+.menu .cart-menu:hover .check-menu {
+  margin-right: -0.5rem;
+  height: 105%;
+}
+.menu .cart-menu:hover .check-menu .fa-check-circle {
+  animation: rotate 1s forwards;
+}
 .menu .Command {
   text-align: center;
-  margin-top: 40px;
+  padding: 40px 0px;
 }
 .menu .Command .button-Command {
   text-align: center;
-  margin-top: 30px;
   border-radius: 40px;
   padding: 20px 70px;
   font-size: 20px;
@@ -104,6 +259,12 @@ main {
   color: #FFFFFF;
   border: none;
   box-shadow: 4px 3px 5px #c5c5c5;
+}
+.menu .Command .button-Command:hover {
+  transform: scale(1);
+  background-color: #f9f9f9;
+  box-shadow: 15px 10px 15px #c5c5c5;
+  transition: all 400ms;
 }
 
 .foot {

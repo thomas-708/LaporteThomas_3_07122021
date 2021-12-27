@@ -18,3 +18,13 @@
     align-items: $alignI;
     justify-content: $justifyC;
 }
+
+
+@mixin Effect-btn($color,$shadow-color,$scale) {
+
+    transform: scale($scale);
+    background-color: lighten($color, 1.3%);
+    box-shadow: 15px 10px 15px $shadow-color;
+    transition: all 400ms;
+}
+

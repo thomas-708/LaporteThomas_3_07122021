@@ -1,3 +1,103 @@
+@keyframes loader-dis {
+  0% {
+    transform: translateZ(0);
+    border-radius: 0 0 0% 0%;
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(-1200px);
+    border-radius: 0 0 100% 100%;
+    opacity: 1;
+  }
+}
+@keyframes cercle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fire {
+  0% {
+    color: #FF79DA;
+    text-shadow: 0 0 7 #FF79DA;
+  }
+  80% {
+    color: #9356DC;
+    text-shadow: none;
+  }
+  100% {
+    color: #FF79DA;
+    text-shadow: 0 0 7 #FF79DA;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes appar {
+  100% {
+    opacity: 1;
+  }
+}
+.loader {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+  inset: 0;
+  opacity: 0.95;
+  z-index: 2;
+  animation: loader-dis 1s 1s forwards;
+  transform-origin: top;
+}
+.loader .fa-stack {
+  display: inline;
+  padding-top: 50%;
+  padding-left: 35%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+.loader .fa-stack .fa-superpowers {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 120px;
+  inset: 0;
+  animation: cercle 1.2s infinite;
+  color: #9356DC;
+}
+.loader .fa-stack .fa-hotjar {
+  animation: fire 2s infinite;
+  animation-delay: 400ms;
+  position: relative;
+  font-size: 50px;
+  right: 80px;
+  top: 12px;
+}
+
+.like::after {
+  content: "\f004";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  color: black;
+  opacity: 0.7;
+}
+
+.like:hover::after {
+  transition: all 1.2s;
+  font-weight: 900;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 a {
   text-decoration: none;
   color: #FFFFFF;
@@ -17,6 +117,7 @@ header {
   text-align: center;
   width: 90%;
   height: auto;
+  margin: 20px;
   background-color: #ffffff;
 }
 
@@ -69,6 +170,12 @@ header {
   border: none;
   box-shadow: 4px 3px 5px #c5c5c5;
 }
+.Reserve .button-Reserve:hover {
+  transform: scale(1);
+  background-color: #f9f9f9;
+  box-shadow: 15px 10px 15px #c5c5c5;
+  transition: all 400ms;
+}
 
 .functioning {
   width: 100%;
@@ -97,8 +204,14 @@ header {
   border-radius: 25px;
   box-shadow: 5px 10px 15px #c5c5c5;
   margin-bottom: 20px;
-  width: 95%;
+  width: 90%;
   margin-left: 10px;
+}
+.functioning .Cart-functioning:hover, .functioning .Cart1-functioning:hover, .functioning .Cart2-functioning:hover {
+  transform: scale(1.1);
+  background-color: #f9f9f9;
+  box-shadow: 15px 10px 15px #c5c5c5;
+  transition: all 400ms;
 }
 .functioning .cart-number {
   position: relative;
@@ -143,7 +256,7 @@ header {
   justify-content: none;
   width: 100%;
 }
-.select .Cart1-select, .select .Cart2-select, .select .Cart3-select, .select .Cart4-select {
+.select .Cart-select {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -157,16 +270,10 @@ header {
   width: 95%;
   margin-left: 10px;
 }
-.select .Cart1-img, .select .Cart2-img, .select .Cart3-img, .select .Cart4-img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 25px 25px 0 0;
-}
-.select .news-select {
+.select .Cart-select .news::after {
+  content: "nouveau";
   position: relative;
-  bottom: 250px;
-  left: 75%;
+  bottom: 140px;
   background-color: #99E2D0;
   padding: 7px 17px;
   border-radius: 3px;
@@ -174,6 +281,18 @@ header {
   font-size: 12px;
   font-weight: bold;
   width: 80px;
+}
+.select .Cart-select:hover {
+  transform: scale(1.005);
+  background-color: #f9f9f9;
+  box-shadow: 15px 10px 15px #c5c5c5;
+  transition: all 400ms;
+}
+.select .Cart1-img, .select .Cart2-img, .select .Cart3-img, .select .Cart4-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 25px 25px 0 0;
 }
 .select .Cart-text-module {
   display: flex;
@@ -186,6 +305,10 @@ header {
   color: black;
 }
 .select .name-select {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
   margin-top: 5px;
   width: 100%;
   font-weight: bold;
@@ -202,6 +325,19 @@ header {
   bottom: 50px;
   left: 40%;
   font-size: 30px;
+}
+.select .likees::after {
+  content: "\f004";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  color: black;
+  opacity: 0.7;
+}
+.select .likees:hover::after {
+  font-weight: 900;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  background-clip: text;
+  color: transparent;
 }
 
 .foot {
@@ -270,12 +406,26 @@ header {
     bottom: 10px;
     right: 0px;
   }
+  .functioning .cart-icon {
+    padding: 10px;
+  }
 
   .select {
+    width: 95%;
+    height: auto;
     margin: 10px;
   }
-  .select .news-select {
-    left: 80%;
+  .select .module-select {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: none;
+    justify-content: none;
+    width: 100%;
+  }
+  .select .Cart-select {
+    margin-left: 4%;
+    box-sizing: border-box;
+    width: 45%;
   }
 }
 @media all and (min-width: 992px) {
@@ -291,17 +441,17 @@ header {
     justify-content: none;
     width: 100%;
   }
-  .select .news-select {
-    display: none;
-  }
   .select .Cart-text-module {
-    max-height: 58px;
+    max-height: 90px;
     width: 100%;
     font-size: 18px;
     margin-top: 20px;
   }
   .select .desc-selct {
     font-size: 15px;
+  }
+  .select .Cart-select .news::after {
+    bottom: 140px;
   }
 }
 

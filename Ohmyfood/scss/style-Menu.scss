@@ -44,20 +44,22 @@ main {
 
 .menu{
     position: relative;
-    bottom: 65px;
     border-radius: 40px 40px 0 0 ;
     background-color: $background-grey;
     padding-left: 1px;
     height: auto;
-    .title-menu{
+    top: -35px;
+
+    .title-menu{            
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
         padding:30px 25px;
         font-family: $Font-logo;
         font-size: 30px;
-        .fa-heart{
-            padding-left: 35%;
-
-        }
     }
+
     .title-menu-{
         width: 10%;
         text-transform: uppercase;
@@ -65,7 +67,6 @@ main {
         font-size: 20px;
         padding-bottom: 5px;
         padding-top: 20px;
-        
         border: {
             bottom: 3px solid;
             color: $tertiary;
@@ -75,25 +76,88 @@ main {
     .module-cart-menu {
        padding: 10px 0px;
     }
+    .A{
+        opacity: 0;
+        animation: appar 5s 2s forwards;
+    }
+    .B{
+        opacity: 0;
+        animation: appar 5s 2.5s forwards;
+    }
+
+    .C{
+        opacity: 0;
+        animation: appar 5s 3s forwards;
+    }
+
     .cart-menu {
         @include Cart_Base(#{$background-greylight},row ,nowrap, 1px, 93%);
+        justify-content: space-between;
         height: 90px;
         color:  black;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        
         .alignText-cart-menu{
-            width: 85%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+           padding-left: 20px;
+           width: 85%;
         }
         .cart-title-menu{
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
             font-weight: bold;
             line-height: 35px;
         }
+        .text-cart-menu{
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .price-cart-menu{
+            padding-right: 15px;
+            padding-top: 30px;
+ 
+        }
+        .check-menu{
+            box-sizing: border-box;
+            background-color: $tertiary;
+            height: 102%;
+            margin-right: -6.5rem;
+            width: 6rem;
+            transition: margin-right 0.5s;
+            .fa-check-circle{
+                font-size: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: inherit;
+                height: inherit;
+                color: white;
+            }
+        }
+        
+        &:hover .check-menu {
+            margin-right: -0.5rem;
+            height: 105%;
+              .fa-check-circle{
+                animation: rotate 1s forwards;
+            }
+        }
+
     }
+
+    
     .Command{
         text-align: center;
-        margin-top: 40px;
+        padding: 40px 0px;
         
         .button-Command{
             text-align: center;
-            margin-top: 30px;
             border-radius: 40px;
             padding: 20px 70px;
             font-size: 20px;
@@ -102,11 +166,11 @@ main {
             color: $police;
             border: none;
             box-shadow: 4px 3px 5px $shadow-color;
-          
+            &:hover{
+                @include Effect-btn($background-greylight, $shadow-color, 1);
+            }
         }
     }
-
-
 }
 
 .foot{
@@ -139,4 +203,31 @@ main {
        padding-right: 10px;
    }
    
+}
+
+
+@media all and (min-width: map-get($breakpoints, mobile)) {
+
+
+
+}
+@media all and (min-width: map-get($breakpoints, desktop)) {
+
+    .menu{
+
+        // .module-cart-menu {
+        //     display: flex;
+        //     flex-flow: row wrap;
+        //     padding: 10px 0px;
+        //     width: 100%;
+        //  }
+        // .cart-menu{
+        //     display: flex;
+        //     flex-flow: row wrap;
+        //     width: 35%;
+        // }
+    
+    }
+
+
 }
