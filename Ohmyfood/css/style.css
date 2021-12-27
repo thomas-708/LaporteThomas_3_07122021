@@ -95,7 +95,7 @@
   font-weight: 900;
   background: linear-gradient(to top, #9356DC, #FF79DA);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 a {
@@ -326,14 +326,21 @@ header {
   left: 40%;
   font-size: 30px;
 }
-.select .likees::after {
+.select .like {
+  padding-right: 10px;
+  font-style: normal;
+}
+.select .like .like::after {
   content: "\f004";
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
   color: black;
   opacity: 0.7;
+  padding-right: 10px;
+  font-style: normal;
 }
-.select .likees:hover::after {
+.select .like .like:hover::after {
+  transition: all 1.2s;
   font-weight: 900;
   background: linear-gradient(to top, #9356DC, #FF79DA);
   background-clip: text;

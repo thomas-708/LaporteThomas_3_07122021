@@ -58,6 +58,9 @@ main {
         padding:30px 25px;
         font-family: $Font-logo;
         font-size: 30px;
+        .like {
+            @include Effect-heart(black,1.2s,linear-gradient(to top, $primary,$secondary));
+        }
     }
 
     .title-menu-{

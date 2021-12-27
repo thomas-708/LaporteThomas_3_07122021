@@ -211,20 +211,11 @@ header {
         
      }
 
-     .likees::after{
-        content: "\f004";
-        font-family: "Font Awesome 5 Free"; 
-        font-weight: 400; 
-        color:black;
-        opacity: .7;
-    }
-    .likees:hover::after{
-        //transition: all 1.2s;
-        font-weight: 900; 
-        background: linear-gradient(to top, $primary,$secondary);
-        background-clip: text;
-        color: transparent;
-    }
+     .like{
+        @include Effect-heart(black,1.2s,linear-gradient(to top, $primary,$secondary));
+        padding-right: 10px;
+        font-style: normal;
+     }
 
 
 }

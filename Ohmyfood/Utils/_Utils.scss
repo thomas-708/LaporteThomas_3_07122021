@@ -117,17 +117,3 @@ $breakpoints: (
     }
 }
 
-.like::after{
-    content: "\f004";
-    font-family: "Font Awesome 5 Free"; 
-    font-weight: 400; 
-    color:black;
-    opacity: .7;
-}
-.like:hover::after{
-    transition: all 1.2s;
-    font-weight: 900; 
-    background: linear-gradient(to top, $primary,$secondary);
-    background-clip: text;
-    color: transparent;
-}

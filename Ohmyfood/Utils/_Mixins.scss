@@ -28,3 +28,23 @@
     transition: all 400ms;
 }
 
+
+@mixin Effect-heart($color,$sec,$gradien) {
+    .like::after{
+        content: "\f004";
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 400; 
+        color:$color;
+        opacity: .7;
+
+    }
+    .like:hover::after{
+        transition: all $sec;
+        font-weight: 900; 
+        background: $gradien;
+        background-clip: text;
+        color: transparent;
+    }
+}
+
+
