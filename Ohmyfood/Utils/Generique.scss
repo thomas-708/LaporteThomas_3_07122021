@@ -1,0 +1,61 @@
+
+a {
+    text-decoration: none;
+    color: $police;
+}
+
+Body {
+    font-family: $Font-text;
+    font-size: 20px;
+    min-width: 300px;
+    background-color: $background;
+}
+
+header {
+    font-family: $Font-logo;
+    font-size: 40px;
+    padding-left: 10%;
+    text-align: center;    
+    width: 90%;
+    height: auto;
+    margin: 20px;
+    background-color: $background
+}
+.foot{
+    background-color: $background-greydark;
+    color: $police;
+    padding: 20px ;
+
+    .title-foot{
+       font-family: $Font-logo;
+       font-size: 20px;
+       padding-bottom: 15px;
+    }
+
+    .text-foot{
+       @include flex (column,wrap,none,none);
+       font-size: 15px;
+       line-height: 25px;
+     
+       
+    }
+    .suggest ,.Partner, .oder{
+         @include flex (row,nowrap,none,none);
+         &:hover{
+           transition: transform 800ms;
+           transform: scale(1.02);
+        
+       }
+   }
+   .icon-foot{
+       padding-top: 7px;
+       padding-right: 7px;
+       font-size: 12px;
+      
+   }
+  
+   .fa-utensils{
+       letter-spacing: 4px;
+   }
+
+}

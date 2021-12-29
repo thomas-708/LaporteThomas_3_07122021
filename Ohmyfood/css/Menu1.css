@@ -1,3 +1,127 @@
+a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+Body {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  min-width: 300px;
+  background-color: #ffffff;
+}
+
+header {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 40px;
+  padding-left: 10%;
+  text-align: center;
+  width: 90%;
+  height: auto;
+  margin: 20px;
+  background-color: #ffffff;
+}
+
+.foot {
+  background-color: #353535;
+  color: #FFFFFF;
+  padding: 20px;
+}
+.foot .title-foot {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 20px;
+  padding-bottom: 15px;
+}
+.foot .text-foot {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: none;
+  justify-content: none;
+  font-size: 15px;
+  line-height: 25px;
+}
+.foot .suggest, .foot .Partner, .foot .oder {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: none;
+  justify-content: none;
+}
+.foot .suggest:hover, .foot .Partner:hover, .foot .oder:hover {
+  transition: transform 800ms;
+  transform: scale(1.02);
+}
+.foot .icon-foot {
+  padding-top: 7px;
+  padding-right: 7px;
+  font-size: 12px;
+}
+.foot .fa-utensils {
+  letter-spacing: 4px;
+}
+
+.loader {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+  inset: 0;
+  opacity: 0.95;
+  z-index: 2;
+  animation: loader-dis 2.75s 1s forwards;
+  transform-origin: top;
+}
+.loader .anim {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+.loader .anim .span:nth-child(1) {
+  animation-delay: 0s;
+}
+.loader .anim .span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.loader .anim .span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.loader .anim .span:nth-child(4) {
+  animation-delay: 0.45s;
+}
+.loader .anim .span:nth-child(5) {
+  animation-delay: 0.55s;
+}
+.loader .anim .span:nth-child(6) {
+  animation-delay: 0.7s;
+}
+.loader .anim .span:nth-child(7) {
+  animation-delay: 0.85s;
+}
+.loader .anim .span {
+  position: relative;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+  border-radius: 30px 30px 10px 10px;
+  height: 120px;
+  width: 50px;
+  text-shadow: 2px 2px 2px #353535;
+  margin: 5px;
+  color: #FFFFFF;
+  font-weight: bold;
+  background: linear-gradient(to bottom, #FF79DA, #9356DC);
+  animation: loader-in 2.4s 10ms linear infinite;
+  filter: drop-shadow(4px 4px 10px rgba(147, 86, 220, 0.5));
+}
+.loader .anim .pts {
+  padding-top: 40px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
 @keyframes loader-dis {
   0% {
     transform: translateZ(0);
@@ -7,6 +131,39 @@
   100% {
     transform: translateY(-1200px);
     border-radius: 0 0 100% 100%;
+    opacity: 1;
+  }
+}
+@keyframes loader-in {
+  0% {
+    box-shadow: 0px 10px 3px rgba(53, 53, 53, 0.5);
+    opacity: 0.8;
+    transform: scale(1) translateX(-30px);
+    font-size: 30px;
+  }
+  50% {
+    box-shadow: 7px 20px 40px rgba(53, 53, 53, 0.5);
+    opacity: 1;
+    transform: scale(1.4) translateX(0px);
+    font-size: 35px;
+  }
+  100% {
+    box-shadow: 0px 2px 3px rgba(53, 53, 53, 0.5);
+    opacity: 0.5;
+    transform: scale(1) translateX(30px);
+    font-size: 30px;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes appar {
+  100% {
     opacity: 1;
   }
 }
@@ -32,106 +189,21 @@
     text-shadow: 0 0 7 #FF79DA;
   }
 }
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes appar {
-  100% {
-    opacity: 1;
-  }
-}
-.loader {
-  position: fixed;
-  background-color: white;
-  width: 100%;
-  height: 100vh;
-  inset: 0;
-  opacity: 0.95;
-  z-index: 2;
-  animation: loader-dis 1s 1s forwards;
-  transform-origin: top;
-}
-.loader .fa-stack {
-  display: inline;
-  padding-top: 50%;
-  padding-left: 35%;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  opacity: 1;
-}
-.loader .fa-stack .fa-superpowers {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 120px;
-  inset: 0;
-  animation: cercle 1.2s infinite;
-  color: #9356DC;
-}
-.loader .fa-stack .fa-hotjar {
-  animation: fire 2s infinite;
-  animation-delay: 400ms;
-  position: relative;
-  font-size: 50px;
-  right: 80px;
-  top: 12px;
-}
-
-.like::after {
-  content: "\f004";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 400;
-  color: black;
-  opacity: 0.7;
-}
-
-.like:hover::after {
-  transition: all 1.2s;
-  font-weight: 900;
-  background: linear-gradient(to top, #9356DC, #FF79DA);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-a {
-  text-decoration: none;
-  color: #FFFFFF;
-}
-
-Body {
-  font-family: "Roboto", sans-serif;
-  font-size: 20px;
-  min-width: 300px;
-  background-color: #ffffff;
-}
-
 main {
   background-color: #eaeaea;
 }
 
 .top {
   position: relative;
-  font-family: "Shrikhand", sans-serif;
-  font-size: 40px;
-  padding-left: 10%;
-  text-align: center;
-  width: 90%;
-  height: 46px;
-  background-color: #ffffff;
-  padding-top: 0px;
-  bottom: 45px;
-  margin: 10px 0;
+  margin-top: 0px;
+  bottom: 60px;
+  height: 20px;
 }
 .top .fa-arrow-left {
   position: relative;
   font-size: 18px;
   color: black;
-  opacity: 0.6;
+  opacity: 0.8;
   font-weight: bold;
   right: 190px;
   top: 40px;
@@ -152,6 +224,20 @@ main {
   padding: 30px 25px;
   font-family: "Shrikhand", sans-serif;
   font-size: 30px;
+}
+.menu .title-menu .like::after {
+  content: "\f004";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  color: black;
+  opacity: 0.7;
+}
+.menu .title-menu .like:hover::after {
+  transition: all 2s 4ms;
+  font-weight: 900;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  background-clip: text;
+  color: transparent;
 }
 .menu .title-menu- {
   width: 10%;
@@ -220,6 +306,7 @@ main {
 .menu .cart-menu .price-cart-menu {
   padding-right: 15px;
   padding-top: 30px;
+  font-weight: bold;
 }
 .menu .cart-menu .check-menu {
   box-sizing: border-box;
@@ -247,7 +334,7 @@ main {
 }
 .menu .Command {
   text-align: center;
-  padding: 40px 0px;
+  padding: 30px 0px 90px 0px;
 }
 .menu .Command .button-Command {
   text-align: center;
@@ -265,37 +352,6 @@ main {
   background-color: #f9f9f9;
   box-shadow: 15px 10px 15px #c5c5c5;
   transition: all 400ms;
-}
-
-.foot {
-  background-color: #353535;
-  color: #FFFFFF;
-  padding: 20px;
-}
-.foot .title-foot {
-  font-family: "Shrikhand", sans-serif;
-  font-size: 20px;
-  padding-bottom: 15px;
-}
-.foot .text-foot {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: none;
-  justify-content: none;
-  font-size: 15px;
-  line-height: 25px;
-}
-.foot .suggest, .foot .Partner {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: none;
-  justify-content: none;
-}
-.foot .icon-foot {
-  padding-right: 12px;
-}
-.foot .icon-foot-Partner {
-  padding-right: 10px;
 }
 
 /*# sourceMappingURL=Menu1.css.map */

@@ -1,41 +1,25 @@
 
 @import '../Utils/_Utils.scss';
 
-@import '../Utils/_Mixins';
-a {
-    text-decoration: none;
-    color: $police;
-}
+@import '../Utils/_Mixins.scss';
 
-Body {
-    font-family: $Font-text;
-    font-size: 20px;
-    min-width: 300px;
-    background-color: $background;
-}
+@import '../Utils/Generique.scss';
+
+@import '../Utils/Anim.scss';
 main {
-
     background-color: $background-grey;
 }
 
-
 .top {
     position: relative;
-    font-family: $Font-logo;
-    font-size: 40px;
-    padding-left: 10%;
-    text-align: center;    
-    width: 90%;
-    height: 46px;
-    background-color: $background;
-    padding-top: 0px;
-    bottom: 45px;
-    margin: 10px 0;
+    margin-top: 0px;
+    bottom: 60px;
+    height: 20px;
     .fa-arrow-left{
         position: relative;
         font-size: 18px;
         color: black;
-        opacity: .6;
+        opacity: .8;
         font-weight: bold;
         right: 190px;
         top: 40px;
@@ -124,7 +108,7 @@ main {
         .price-cart-menu{
             padding-right: 15px;
             padding-top: 30px;
- 
+            font-weight: bold;
         }
         .check-menu{
             box-sizing: border-box;
@@ -157,7 +141,7 @@ main {
     
     .Command{
         text-align: center;
-        padding: 40px 0px;
+        padding: 30px 0px 90px 0px;
         
         .button-Command{
             text-align: center;
@@ -176,37 +160,7 @@ main {
     }
 }
 
-.foot{
-    background-color: $background-greydark;
-    color: $police;
-    padding: 20px ;
 
-    .title-foot{
-       font-family: $Font-logo;
-       font-size: 20px;
-       padding-bottom: 15px;
-    }
-
-    .text-foot{
-       @include flex (column,wrap,none,none);
-       font-size: 15px;
-       line-height: 25px;
-       
-    }
-    .suggest ,.Partner{
-         @include flex (row,nowrap,none,none);
-           
-   }
-   .icon-foot{
-           padding-right: 12px;
-   }
-
-   .icon-foot-Partner{
-
-       padding-right: 10px;
-   }
-   
-}
 
 
 @media all and (min-width: map-get($breakpoints, mobile)) {
