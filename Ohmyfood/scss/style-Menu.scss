@@ -8,6 +8,15 @@
 @import '../Utils/Anim.scss';
 main {
     background-color: $background-grey;
+    .background-img{
+        height: 500px;
+        img{
+            min-height: 490px;
+            max-height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
 }
 
 .top {
@@ -21,7 +30,7 @@ main {
         color: black;
         opacity: .8;
         font-weight: bold;
-        right: 190px;
+        right: 160px;
         top: 40px;
     }
 }
@@ -90,8 +99,8 @@ main {
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
-           padding-left: 20px;
-           width: 85%;
+            padding-left: 20px;
+            width: 85%;
         }
         .cart-title-menu{
             overflow: hidden;
@@ -161,30 +170,75 @@ main {
 }
 
 
-
-
 @media all and (min-width: map-get($breakpoints, mobile)) {
+   
+   .menu{
+        .cart-menu {
 
+            width: 95%;
 
-
+        }
+    }   
 }
+
 @media all and (min-width: map-get($breakpoints, desktop)) {
 
     .menu{
+       //background-color: red;
+        display: flex;
+        flex-flow: column wrap;
+        position: relative;
+        .title-menu{
+            margin: 0 90px 0 50px;
 
-        // .module-cart-menu {
-        //     display: flex;
-        //     flex-flow: row wrap;
-        //     padding: 10px 0px;
-        //     width: 100%;
-        //  }
-        // .cart-menu{
-        //     display: flex;
-        //     flex-flow: row wrap;
-        //     width: 35%;
-        // }
-    
+        }
+      .module-cart-menu{
+          width: 50%;
+      }
+   
+      .title-menu-{
+        width: 30px;
+      }
+      .title-menu-.B{
+      visibility: hidden;
+        
+      }
+      .title-menu-.B::after{
+        visibility: visible;
+        content: 'Plats';
+        width: 10px;
+        height: 20px;
+        color: black;
+        position: relative;
+        right: 90px;
+        bottom: 55px;
+      
+        }
+        .title-menu-.B::before{
+            visibility: visible;
+            position: relative;
+            bottom: 47px;
+            left: 2px;
+            content: ' ------';
+            color: rgba(#000000, 0);
+            width: 20px;
+            height: 5px;
+            border-bottom: 3px solid $tertiary;
+        }
+      .B{
+          position: absolute;
+          left: 50%;
+          top: 14.3%;
+         
+      }
+      .C{
+        position: relative;
+        left:25%;
+        top: 100%;
+
+      }
+        
     }
-
-
 }
+
+

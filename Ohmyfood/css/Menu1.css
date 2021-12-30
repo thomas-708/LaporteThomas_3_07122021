@@ -41,7 +41,7 @@ header {
 }
 .foot .suggest, .foot .Partner, .foot .oder {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   align-items: none;
   justify-content: none;
 }
@@ -192,6 +192,15 @@ header {
 main {
   background-color: #eaeaea;
 }
+main .background-img {
+  height: 500px;
+}
+main .background-img img {
+  min-height: 490px;
+  max-height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
 .top {
   position: relative;
@@ -205,7 +214,7 @@ main {
   color: black;
   opacity: 0.8;
   font-weight: bold;
-  right: 190px;
+  right: 160px;
   top: 40px;
 }
 
@@ -352,6 +361,62 @@ main {
   background-color: #f9f9f9;
   box-shadow: 15px 10px 15px #c5c5c5;
   transition: all 400ms;
+}
+
+@media all and (min-width: 576px) {
+  .menu .cart-menu {
+    width: 95%;
+  }
+}
+@media all and (min-width: 992px) {
+  .menu {
+    display: flex;
+    flex-flow: column wrap;
+    position: relative;
+  }
+  .menu .title-menu {
+    margin: 0 90px 0 50px;
+  }
+  .menu .module-cart-menu {
+    width: 50%;
+  }
+  .menu .title-menu- {
+    width: 30px;
+  }
+  .menu .title-menu-.B {
+    visibility: hidden;
+  }
+  .menu .title-menu-.B::after {
+    visibility: visible;
+    content: "Plats";
+    width: 10px;
+    height: 20px;
+    color: black;
+    position: relative;
+    right: 90px;
+    bottom: 55px;
+  }
+  .menu .title-menu-.B::before {
+    visibility: visible;
+    position: relative;
+    bottom: 47px;
+    left: 2px;
+    content: " ------";
+    color: rgba(0, 0, 0, 0);
+    width: 20px;
+    height: 5px;
+    border-bottom: 3px solid #99E2D0;
+  }
+  .menu .B {
+    position: absolute;
+    left: 50%;
+    top: 14.3%;
+  }
+  .menu .C {
+    position: relative;
+    left: 25%;
+    top: 100%;
+  }
 }
 
 /*# sourceMappingURL=Menu1.css.map */

@@ -40,7 +40,7 @@ header {
        
     }
     .suggest ,.Partner, .oder{
-         @include flex (row,nowrap,none,none);
+         @include flex (row,wrap,none,none);
          &:hover{
            transition: transform 800ms;
            transform: scale(1.02);
@@ -59,3 +59,5 @@ header {
    }
 
 }
+
+
