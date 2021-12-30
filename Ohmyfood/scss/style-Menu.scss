@@ -5,8 +5,9 @@
 
 @import '../Utils/Generique.scss';
 
-@import '../Utils/Anim.scss';
+@import '../Utils/Anim';
 main {
+    
     background-color: $background-grey;
     .background-img{
         height: 500px;
@@ -235,7 +236,7 @@ main {
         position: relative;
         left:25%;
         top: 100%;
-
+         
       }
         
     }

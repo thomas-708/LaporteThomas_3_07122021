@@ -128,10 +128,13 @@ header {
     border-radius: 0 0 0% 0%;
     opacity: 0.95;
   }
-  100% {
-    transform: translateY(-1200px);
+  99% {
+    transform: translateY(-1500px);
     border-radius: 0 0 100% 100%;
     opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @keyframes loader-in {
