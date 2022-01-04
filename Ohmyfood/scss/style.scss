@@ -2,9 +2,134 @@
 @import '../Utils/_Utils.scss';
 
 @import '../Utils/_Mixins.scss';
-@import '../Utils/Anim.scss';
+
 @import '../Utils/Generique.scss';
 // media mobile
+.loader{
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    inset: 0;
+    opacity: .95;
+    z-index: 2;
+    animation: loader-dis 1s linear both;
+    transform-origin: top;
+    .anim{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+        .span:nth-child(1){
+            animation-delay: 0s;
+        }
+        .span:nth-child(2){
+            animation-delay: 0.15s;
+        }
+        .span:nth-child(3){
+            animation-delay: 0.30s;
+        }
+        .span:nth-child(4){
+            animation-delay: 0.45s;
+        }
+        .span:nth-child(5){
+            animation-delay: 0.55s;
+        }
+        .span:nth-child(6){
+            animation-delay: 0.70s;
+        }
+        .span:nth-child(7){
+            animation-delay: 0.85s;
+        }
+        .span {
+            position: relative;
+            display: grid;
+            place-items: center;
+            font-size: 25px;
+            border-radius: 30px 30px 10px 10px;
+            height: 120px;
+            width: 50px;
+            text-shadow: 2px 2px 2px $greydark;
+            margin: 5px;
+            color: $police;
+            font-weight: bold;
+            background:linear-gradient( to bottom , $secondary, $primary);
+            animation: loader-in 2s both;
+            filter: drop-shadow(4px 4px 10px rgba($primary, 0.5));
+        }
+        .pts{
+            padding-top: 40px;
+            font-weight: bold;
+            font-size: 20px;
+            color: $police;
+        }
+    }
+}
+@keyframes loader-dis {
+    0%{
+        transform: translateZ(0);
+        border-radius: 0 0 0% 0%;
+        opacity: .95;
+    }
+    99%{
+        transform: translateY(-1500px);
+        border-radius: 0 0 100% 100%;
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        z-index: -1;
+    }   
+}
+@keyframes loader-in {
+    0%{
+        box-shadow: 0px 10px 3px rgba($greydark, 0.5);
+        opacity: 0.8;
+        transform: scale(1) translateX(-30px);
+        font-size: 30px;
+    }
+    50%{
+        box-shadow: 7px 20px 40px rgba($greydark, 0.5);
+        opacity: 1;
+        transform: scale(1.4) translateX(0px);
+        font-size: 35px;
+    }
+    100%{
+        box-shadow: 0px 2px 3px rgba($greydark, 0.5);
+        opacity: 0.5;
+        transform: scale(1) translateX(30px);       
+        font-size: 30px;
+    }
+}
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+
+@keyframes appar {
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes cercle {
+    0%{
+        transform: rotate(0deg);
+    }  
+    100%{
+        transform: rotate(360deg);
+    }  
+}
 
 
 .Location {
