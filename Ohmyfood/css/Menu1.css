@@ -34,16 +34,12 @@ header {
 .foot .text-foot {
   display: flex;
   flex-flow: column wrap;
-  align-items: none;
-  justify-content: none;
   font-size: 15px;
   line-height: 25px;
 }
 .foot .suggest, .foot .Partner, .foot .oder {
   display: flex;
   flex-flow: row wrap;
-  align-items: none;
-  justify-content: none;
 }
 .foot .suggest:hover, .foot .Partner:hover, .foot .oder:hover {
   transition: transform 800ms;
@@ -66,7 +62,7 @@ header {
   inset: 0;
   opacity: 0.95;
   z-index: 2;
-  animation: loader-dis 2.75s 1s forwards;
+  animation: loader-dis 2.75s linear both;
   transform-origin: top;
 }
 .loader .anim {
@@ -112,7 +108,7 @@ header {
   color: #FFFFFF;
   font-weight: bold;
   background: linear-gradient(to bottom, #FF79DA, #9356DC);
-  animation: loader-in 2.4s 10ms linear infinite;
+  animation: loader-in 2s 1s both;
   filter: drop-shadow(4px 4px 10px rgba(147, 86, 220, 0.5));
 }
 .loader .anim .pts {
@@ -135,6 +131,7 @@ header {
   }
   100% {
     opacity: 0;
+    z-index: -1;
   }
 }
 @keyframes loader-in {
@@ -171,25 +168,8 @@ header {
   }
 }
 @keyframes cercle {
-  0% {
-    transform: rotate(0deg);
-  }
   100% {
     transform: rotate(360deg);
-  }
-}
-@keyframes fire {
-  0% {
-    color: #FF79DA;
-    text-shadow: 0 0 7 #FF79DA;
-  }
-  80% {
-    color: #9356DC;
-    text-shadow: none;
-  }
-  100% {
-    color: #FF79DA;
-    text-shadow: 0 0 7 #FF79DA;
   }
 }
 main {
